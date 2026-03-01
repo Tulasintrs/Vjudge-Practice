@@ -1,0 +1,161 @@
+D)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);        
+        long A = sc.nextLong();
+        long B = sc.nextLong();
+        long C = sc.nextLong();        
+        if (A + B > C && A + C > B && B + C > A) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }       
+    }
+}
+___________________________________________________________________________
+C)
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long L=sc.nextLong();
+        long B=sc.nextLong();       
+        long area=L*B;
+        System.out.println(area);       
+    }
+}
+----------------------------------------------------------------------------------
+F)
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        long n=sc.nextLong();
+        long reversed=0;
+        long num=Math.abs(n);
+        while (num>0){
+            long digit=num%10;
+            reversed=reversed*10+digit;
+            num=num/10;
+        }
+        if(n<0){
+            reversed=-reversed;
+        }
+        System.out.println(reversed);
+    }
+}
+---------------------------------------------------------------------------------
+A)
+public class Main
+{
+	public static void main(String[] args) {
+	    short l = 1000;
+        while(l > 0){
+            System.out.println("Hello World");
+            l--;
+        }
+	}
+}
+----------------------------------------------------------------------------------
+B)
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    short a = sc.nextShort();
+	    short b = sc.nextShort();
+	    if(a==b){
+	        System.out.println("a == b");
+	    }
+	    if(a > b){
+	        System.out.println("a > b");
+	    }
+	    if(a < b){
+	        System.out.println("a < b");
+	    }
+	    
+	}
+}
+----------------------------------------------------------------------------------
+U)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();  
+        while (T-- > 0) {
+            int A = sc.nextInt();
+            int B = sc.nextInt();
+            int C = sc.nextInt();
+            int second;
+            if ((A >= B && A <= C) || (A >= C && A <= B))
+                second = A;
+            else if ((B >= A && B <= C) || (B >= C && B <= A))
+                second = B;
+            else
+                second = C;
+            System.out.println(second);
+        }
+    }
+}
+---------------------------------------------------------------------------------------
+AL)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int lastDigit = n % 10;
+        int firstDigit = n / 1000;   
+        int sum = firstDigit + lastDigit;      
+        System.out.println(sum);
+    }
+}
+------------------------------------------------------------------------------------------
+AP)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long result = a * a + b * b;      
+        System.out.println(result);
+    }
+}
+---------------------------------------------------------------------------------------
+BI)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();  
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(N + " * " + i + " = " + (N * i));
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+Z)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);       
+        int N = sc.nextInt();       
+        int sum = N * (N + 1) * (2 * N + 1) / 6;       
+        System.out.println(sum);       
+        sc.close();
+    }
+}
+__________________________________________________________________________
+
+Y)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();   
+        int sum = N * (N + 1) / 2;    
+        System.out.println(sum);    
+        sc.close();
+    }
+}

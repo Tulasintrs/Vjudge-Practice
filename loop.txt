@@ -1,0 +1,181 @@
+H)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int count = 1; 
+        for (int i = 1; i <= N; i++) { 
+            for (int j = 1; j <= i; j++) {  
+                System.out.print(count + " ");
+                count++;
+            }
+            System.out.println(); 
+        }
+    }
+}
+___________________________________________________________
+I)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[][] arr = new int[N][N];
+        int count = 1;
+        for (int col = 0; col < N; col++) {
+            for (int row = col; row < N; row++) {
+                arr[row][col] = count++;
+            }
+        }
+        for (int row = 0; row < N; row++) {
+            for (int col = 0; col <= row; col++) {
+                System.out.print(arr[row][col] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+__________________________________________________________________________
+J)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int W = sc.nextInt(); 
+        int L = sc.nextInt(); 
+        for (int i = 1; i <= L; i++) { 
+            for (int j = 1; j <= W; j++) { 
+                if (i == 1 || i == L || j == 1 || j == W) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+___________________________________________________________________________
+G)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        long max = Long.MIN_VALUE;  
+        for (int i = 0; i < N; i++) {
+            long num = sc.nextLong();
+            if (num > max) {
+                max = num;
+            }
+        }
+        System.out.println(max);
+    }
+}
+_______________________________________________________________________________
+K)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = N - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+______________________________________________________________________________
+L)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int row = 1; row <= N; row++) {
+            int starCol = N - row + 1; 
+            for (int num = N; num > starCol; num--) {
+                System.out.print(num);
+            }
+            System.out.print("*");
+            for (int num = 1; num < starCol; num++) {
+                System.out.print(num);
+            }
+            System.out.println();
+        }
+    }
+}
+_______________________________________________________________
+M)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N - i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+___________________________________________________________________________________________
+N)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 1; i <= N; i++) {
+            int stars = N - i + 1;
+            if (i == 1) {
+                for (int j = 1; j <= stars; j++) {
+                    System.out.print("*");
+                    if (j != stars) System.out.print(" ");
+                }
+            } else if (i == N) {
+                System.out.print("*");
+            } else {
+                System.out.print("*");
+                for (int s = 1; s <= 2*(stars - 2) + 1; s++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+__________________________________________________________________________
+P)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(N + " * " + i + " = " + (N * i));
+        }
+    }
+}
+______________________________________________________________________________
+Y)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(arr[i]);
+            if (i != 0) System.out.print(" "); 
+        }
+    }
+}

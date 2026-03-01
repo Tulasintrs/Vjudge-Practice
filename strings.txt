@@ -1,0 +1,202 @@
+A)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        char[] arr = S.toCharArray();
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+        System.out.println(new String(arr));
+    }
+}
+_____________________________________________________________
+B)import java.util.Scanner;
+public class OddEvenLetters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        StringBuilder odd = new StringBuilder();
+        StringBuilder even = new StringBuilder();
+        for (int i = 0; i < S.length(); i++) {
+            if (i % 2 == 0) {
+                even.append(S.charAt(i)); 
+            } else {
+                odd.append(S.charAt(i));  
+            }
+        }
+        System.out.println(odd.toString() + even.toString());
+    }
+}
+_____________________________________________________________________
+D)import java.util.Scanner;
+public class OnlyVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        String lower = S.toLowerCase();
+        boolean onlyVowels = true;
+        for (int i = 0; i < lower.length(); i++) {
+            char ch = lower.charAt(i);
+            if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                onlyVowels = false;
+                break;
+            }
+        }
+        if (onlyVowels) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
+_________________________________________________________________________________________
+E)import java.util.Scanner;
+public class OnlyDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        boolean onlyDigits = true;
+        for (int i = 0; i < S.length(); i++) {
+            char ch = S.charAt(i);
+            if (ch < '0' || ch > '9') {  
+                onlyDigits = false;
+                break;
+            }
+        }
+        if (onlyDigits) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
+_____________________________________________________________________________________
+F)import java.util.Scanner;
+public class VowelConsonantCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String S = sc.nextLine();
+        int vowels = 0;
+        int consonants = 0;
+        for (int i = 0; i < S.length(); i++) {
+            char ch = Character.toLowerCase(S.charAt(i));
+            if (ch >= 'a' && ch <= 'z') {
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                    vowels++;
+                } else {
+                    consonants++;
+                }
+            }
+        }
+        System.out.println(vowels + " " + consonants);
+    }
+}
+____________________________________________________________________________________________
+J)import java.util.Scanner;
+public class FirstRepeatingCharSimple {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = Integer.parseInt(sc.nextLine());
+        for (int t = 0; t < T; t++) {
+            String s = sc.nextLine();
+            boolean[] seen = new boolean[26];
+            char firstRepeat = '.';
+            for (int i = 0; i < s.length(); i++) {
+                char ch = s.charAt(i);
+                int index = ch - 'a';
+                if (seen[index]) {
+                    firstRepeat = ch;
+                    break;
+                }
+                seen[index] = true;
+            }
+            System.out.println(firstRepeat);
+        }
+    }
+}
+_________________________________________________________________________________________________
+P)import java.util.Scanner;
+public class RearrangePalindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+
+        while (t-- > 0) {
+            String s = sc.nextLine();
+            boolean[] seen = new boolean[26];
+            int unique = 0;
+
+            for (int i = 0; i < s.length(); i++) {
+                int index = s.charAt(i) - 'a';
+                if (!seen[index]) {
+                    seen[index] = true;
+                    unique++;
+                }
+            }
+
+            if (unique == 1) {
+                System.out.println("NO");
+            } else {
+                System.out.println("YES");
+            }
+        }
+    }
+}
+_____________________________________________________________________________________
+R)import java.util.Scanner;
+public class MaxNumberInsertion {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int d = sc.nextInt();
+            String num = sc.next();
+            StringBuilder sb = new StringBuilder();
+            boolean inserted = false;
+            for (int i = 0; i < n; i++) {
+                char ch = num.charAt(i);
+                if (!inserted && d > (ch - '0')) {
+                    sb.append(d);
+                    inserted = true;
+                }
+                sb.append(ch);
+            }
+            if (!inserted) {
+                sb.append(d);
+            }
+            System.out.println(sb.toString());
+        }
+    }
+}
+____________________________________________________________________________________
+M)import java.util.Scanner;
+public class PangramCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine(); 
+        String s = sc.nextLine();
+        boolean[] seen = new boolean[26]; 
+        for (int i = 0; i < n; i++) {
+            char ch = Character.toLowerCase(s.charAt(i));
+            if (ch >= 'a' && ch <= 'z') {
+                seen[ch - 'a'] = true;
+            }
+        }
+        boolean isPangram = true;
+        for (boolean b : seen) {
+            if (!b) {
+                isPangram = false;
+                break;
+            }
+        }
+        System.out.println(isPangram ? "YES" : "NO");
+    }
+}

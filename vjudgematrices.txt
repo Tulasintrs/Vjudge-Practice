@@ -1,0 +1,232 @@
+A)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        for (int i = 0; i < N; i++) {
+            int sum = 0;           
+            for (int j = 0; j < M; j++) {
+                int num = sc.nextInt();
+                sum += num;
+            }          
+            System.out.println(sum);
+        }
+    }
+}
+______________________________________________________________
+
+B)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int[] colSum = new int[M]; 
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                int num = sc.nextInt();
+                colSum[j] += num; 
+            }
+        }
+        for (int j = 0; j < M; j++) {
+            System.out.println(colSum[j]);
+        }
+    }
+}
+
+_______________________________________________________________________________
+
+C)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        long[][] matrix = new long[N][M];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                matrix[i][j] = sc.nextLong();
+            }
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                matrix[i][j] += sc.nextLong();
+            }
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+___________________________________________________________________________________________
+
+I)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();  
+        while (T-- > 0) {
+            int N1 = sc.nextInt();
+            int M1 = sc.nextInt();
+            int[][] A = new int[N1][M1];
+            for (int i = 0; i < N1; i++) {
+                for (int j = 0; j < M1; j++) {
+                    A[i][j] = sc.nextInt();
+                }
+            }
+            int N2 = sc.nextInt();
+            int M2 = sc.nextInt();
+            int[][] B = new int[N2][M2];
+            for (int i = 0; i < N2; i++) {
+                for (int j = 0; j < M2; j++) {
+                    B[i][j] = sc.nextInt();
+                }
+            }
+            int[][] result = new int[N1][M2];
+            for (int i = 0; i < N1; i++) {
+                for (int j = 0; j < M2; j++) {
+                    for (int k = 0; k < M1; k++) {
+                        result[i][j] += A[i][k] * B[k][j];
+                    }
+                }
+            }
+            for (int i = 0; i < N1; i++) {
+                for (int j = 0; j < M2; j++) {
+                    System.out.print(result[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+
+________________________________________________________________________
+
+D)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        long[][] matrix = new long[N][M];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
+                matrix[i][j] = sc.nextLong();
+            }
+        }
+        for (int j = 0; j < M; j++) {
+            for (int i = 0; i < N; i++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+_____________________________________________________________________________
+F)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();      
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int[][] matrix = new int[N][N];
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    matrix[i][j] = sc.nextInt();
+                }
+            }
+            for (int i = 0; i < N; i++) {
+                for (int j = i + 1; j < N; j++) {
+                    int temp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = temp;
+                }
+            }
+            for (int i = 0; i < N; i++) {
+                int left = 0, right = N - 1;
+                while (left < right) {
+                    int temp = matrix[i][left];
+                    matrix[i][left] = matrix[i][right];
+                    matrix[i][right] = temp;
+                    left++;
+                    right--;
+                }
+            }
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    System.out.print(matrix[i][j]);
+                    if (j != N - 1) System.out.print(" ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+___________________________________________________________________________
+G)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            int[][] matrix = new int[N][N];
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    matrix[i][j] = sc.nextInt();
+                }
+            }
+            int totalSum = 0;
+            for (int diff = -(N - 1); diff <= N - 1; diff++) {
+                int diagSum = 0;
+                for (int i = 0; i < N; i++) {
+                    int j = i - diff;
+                    if (j >= 0 && j < N) {
+                        diagSum += matrix[i][j];
+                    }
+                }
+                totalSum += diagSum;
+            }
+            System.out.println(totalSum);
+        }
+    }
+}
+_______________________________________________________________________________
+J)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt(); 
+        while (T-- > 0) {
+            int N = sc.nextInt(); 
+            int[][] A = new int[N][N];
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    A[i][j] = sc.nextInt();
+                }
+            }
+            int maxTrace = 0;
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    int currentSum = 0;
+                    int r = i;
+                    int c = j;
+                    while (r < N && c < N) {
+                        currentSum += A[r][c];
+                        maxTrace = Math.max(maxTrace, currentSum);
+                        r++;
+                        c++;
+                    }
+                }
+            }        
+            System.out.println(maxTrace);
+        }
+    }
+}
+____________________________________________________________________________

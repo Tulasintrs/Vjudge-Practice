@@ -1,0 +1,190 @@
+A) import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+P)
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int[] arr=new int[N];
+        for (int i=0;i<N;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int i=0;i<N;i++){
+            int count=0;
+            for (int j=0;j<N;j++){
+                if(arr[i]==arr[j]){
+                    count++;
+                }
+            }
+            if(count==1){
+                System.out.print(arr[i]+" ");
+            }
+        }
+    }
+}
+-------------------------------------------------------------------------------------
+H)
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+
+        for (int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        int count=0;
+        for(int i=1;i<=n-2;i++){
+            if(a[i]<a[i-1]&&a[i]<a[i+1]){
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+--------------------------------------------------------------------------------------------
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();      
+        int[] a = new int[n];      
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+________________________________________________________________________________________________________
+S)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);      
+        int T = sc.nextInt();        
+        while (T-- > 0) {
+            int N = sc.nextInt();            
+            int[] arr = new int[N];
+            int[] freq = new int[N + 1];             
+            for (int i = 0; i < N; i++) {
+                arr[i] = sc.nextInt();
+                freq[arr[i]]++;
+            }          
+            int first = 0, second = 0;          
+            for (int i = 1; i <= N; i++) {
+                if (freq[i] == 2) {
+                    if (first == 0)
+                        first = i;
+                    else
+                        second = i;
+                }
+            }
+            if (first < second)
+                System.out.println(first + " " + second);
+            else
+                System.out.println(second + " " + first);
+        }
+    }
+}
+_____________________________________________________________________
+N)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);       
+        int N = sc.nextInt();
+        long sum = 0;   
+        for (int i = 0; i < N; i++) {
+            long num = sc.nextLong();          
+            if (num % 2 != 0) { 
+                sum += num;
+            }
+        }        
+        System.out.println(sum);
+    }
+}
+______________________________________________________________________
+R)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);        
+        int T = sc.nextInt();       
+        while (T-- > 0) {
+            int N = sc.nextInt();
+            long sum = 0;   
+            for (int i = 0; i < N; i++) {
+                long num = sc.nextLong();
+                sum += num;   
+            }         
+            System.out.println(sum);
+        }
+    }
+}
+_____________________________________________________________________
+L)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();        
+        long max = Long.MIN_VALUE;   
+        for (int i = 0; i < N; i++) {
+            long num = sc.nextLong();
+            if (num > max) {
+                max = num;
+            }
+        }
+       System.out.println(max);
+    }
+}
+___________________________________________________________________________
+
+O)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        long[] arr = new long[N];
+        for (int i = 0; i < N; i++) {
+            arr[i] = sc.nextLong();
+        }
+        for (int i = 0; i < N; i++) {
+            for (int j = i + 1; j < N; j++) {
+                if (arr[i] == arr[j]) {
+                    System.out.println(arr[i]);
+                    return;  
+                }
+            }
+        }
+    }
+}
+_________________________________________________________________________________
+J)import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] freq = new int[N + 1];
+        for (int i = 0; i < N; i++) {
+            int num = sc.nextInt();
+            freq[num]++;
+        }
+        for (int i = 1; i <= N; i++) {
+            System.out.println(i + ": " + freq[i]);
+        }
+    }
+}
